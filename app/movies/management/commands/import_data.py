@@ -32,7 +32,17 @@ def populate_data(model, key):
 
 
 class Command(BaseCommand):
-    help = ""
+    help = "Command line data import\n" \
+           "* to import all data, pass `all` after command\n" \
+           "* to import separate data, pass content names:\n" \
+           "    **actors" \
+           "    **roles" \
+           "    **directors" \
+           "    **directors_genres" \
+           "    **movies" \
+           "    **movies_genres" \
+           "    **movies_directors\n" \
+           "* to truncate table contents pass `truncate` after command\n"
 
     def add_arguments(self, parser):
         parser.add_argument('value')
